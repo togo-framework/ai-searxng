@@ -1,6 +1,6 @@
 # ai-searxng — documentation
 
-  <img src=".github/assets/togo-mark.svg" alt="togo" height="64" />
+SearXNG metasearch data-source for the togo AI kit
 
 ## Overview
 
@@ -19,23 +19,21 @@ A capability plugin — it self-registers on boot; no driver selector needed.
 
 ## Configuration
 
-Environment variables read by this plugin (extracted from the source):
+Environment variables read by this plugin (extracted from the source — see the gateway/provider docs for each value):
 
-| Env var | Notes |
-|---|---|
-| `G` | _see provider docs_ |
-| `SEARXNG_URL` | _see provider docs_ |
+| Env var |
+|---|
+| `SEARXNG_URL"` |
 
 ## Usage
 
 ```go
 // A data source for ai-rag / agents: fetch/scrape/search web content.
-src := searxng.FromKernel(k)
-docs, err := src.Fetch(ctx, "https://example.com")
+docs, err := searxng.FromKernel(k).Fetch(ctx, "https://example.com")
 ```
 
 ## Links
 
 - Marketplace: https://to-go.dev/marketplace
 - Source: https://github.com/togo-framework/ai-searxng
-- README: ../README.md
+- Full README: ../README.md
